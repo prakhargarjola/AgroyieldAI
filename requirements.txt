@@ -7,5 +7,5 @@ scikit-learn
 joblib
 requests
 shap
-
+xgboost
 
