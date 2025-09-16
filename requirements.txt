@@ -1,5 +1,10 @@
+gunicorn
+Flask
+gunicorn         
 pandas
 numpy
 scikit-learn
 joblib
-xgboost
+requests
+
+
