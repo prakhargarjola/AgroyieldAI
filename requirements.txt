@@ -8,4 +8,6 @@ joblib
 requests
 shap
 xgboost
+catboost
+lightgbm
 
