@@ -1,0 +1,12 @@
+prefix=d:/SIH_Crop_Yielding/venv/Library
+exec_prefix=d:/SIH_Crop_Yielding/venv/Library
+libdir=d:/SIH_Crop_Yielding/venv/Library/lib
+includedir=d:/SIH_Crop_Yielding/venv/Library/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.5
+Libs: -L${libdir} -lzmq
+Libs.private: 
+Requires.private: 
+Cflags: -I${includedir} 

@@ -1,0 +1,13 @@
+prefix=D:/SIH_Crop_Yielding/venv/Library
+exec_prefix=D:/SIH_Crop_Yielding/venv/Library
+libdir=D:/SIH_Crop_Yielding/venv/Library/lib
+sharedlibdir=D:/SIH_Crop_Yielding/venv/Library/lib
+includedir=D:/SIH_Crop_Yielding/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

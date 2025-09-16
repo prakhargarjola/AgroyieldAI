@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriYield AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">🌱 AgriYield AI</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#dashboard">Farmer Dashboard</a></li>
+        <li><a href="#market-prices">Market Prices</a></li>
+        <li><a href="#weather-forecast">Weather Forecast</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>AI-Powered Crop Yield <span>Prediction & Optimization</span></h1>
+    <p>Maximize your harvest with intelligent farming recommendations powered by machine learning, weather data, and satellite imagery.</p>
+    <div class="hero-buttons">
+      <button id="forecast-btn">Check Your Yield Forecast</button>
+      <button id="learn-btn">Learn How It Works</button>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Smart Farming Solutions</h2>
+    <p>Our AI platform provides comprehensive farming insights to help you make data-driven decisions and optimize your crop production.</p>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>Yield Prediction</h3>
+        <p>AI-powered crop yield forecasting with confidence intervals.</p>
+        <a href="#">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Irrigation Advice</h3>
+        <p>Smart water management and irrigation scheduling.</p>
+        <a href="#">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Fertilizer Plan</h3>
+        <p>Optimized fertilizer application timing and dosage.</p>
+        <a href="#">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Pest Alerts</h3>
+        <p>Early warning system for pests and disease prevention.</p>
+        <a href="#">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="placeholder-section" id="market-prices">
+    <h2>Market Prices</h2>
+    <p>Live market prices for your crops will be displayed here. (Coming Soon)</p>
+  </section>
+
+  <section class="placeholder-section" id="weather-forecast">
+    <h2>Detailed Weather Forecast</h2>
+    <p>7-day weather forecast for your district will be available here. (Coming Soon)</p>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Transform Your Farming?</h2>
+    <p>Join thousands of farmers who are already using AI to increase their yields and optimize their operations.</p>
+    <button>Get Started Free</button>
+  </section>
+
+  <section class="dashboard" id="dashboard">
+    <h2>Farmer Dashboard</h2>
+    <p>Enter your crop details to get AI-powered yield predictions and farming recommendations. Our model is trained on over 1,000,000 data points for high accuracy.</p>
+    <div class="dashboard-content">
+      <form id="forecast-form">
+        <label for="district">District</label>
+        <div class="autocomplete-container">
+          <input type="text" id="district" name="district" placeholder="Type or select a district" required autocomplete="off">
+        </div>
+        <datalist id="district-list">
+          <option>Agra</option><option>Aligarh</option><option>Azamgarh</option><option>Bahraich</option><option>Ballia</option><option>Banda</option><option>Barabanki</option><option>Bareilly</option><option>Basti</option><option>Bijnor</option><option>Budaun</option><option>Deoria</option><option>Etah</option><option>Etawah</option><option>Farrukhabad</option><option>Fatehpur</option><option>Ghazipur</option><option>Gonda</option><option>Gorakhpur</option><option>Hamirpur</option><option>Hardoi</option><option>Jalaun</option><option>Jaunpur</option><option>Jhansi</option><option>Lucknow</option><option>Mainpuri</option><option>Mathura</option><option>Meerut</option><option>Moradabad</option><option>Muzaffarnagar</option><option>Pilibhit</option><option>Pratapgarh</option><option>Rampur</option><option>Saharanpur</option><option>Shahjahanpur</option><option>Sitapur</option><option>Sultanpur</option><option>Unnao</option><option>Varanasi</option>
+        </datalist>
+
+        <label for="crop">Crop</label>
+        <div class="autocomplete-container">
+            <input type="text" id="crop" name="crop" placeholder="Type or select a crop" required autocomplete="off">
+        </div>
+        <datalist id="crop-list">
+            <option>Barley</option><option>Castor</option><option>Chickpea</option><option>Cotton</option><option>Finger Millet</option><option>Groundnut</option><option>Kharif Sorghum</option><option>Linseed</option><option>Maize</option><option>Onion</option><option>Pearl Millet</option><option>Pigeonpea</option><option>Potatoes</option><option>Rabi Sorghum</option><option>Rapeseed & Mustard</option><option>Rice</option><option>Safflower</option><option>Sesamum</option><option>Soyabean</option><option>Sugarcane</option><option>Sunflower</option><option>Wheat</option>
+        </datalist>
+
+        <label for="year">Year</label>
+        <input type="number" id="year" placeholder="e.g., 2025" required>
+
+        <label for="area">Area (ha)</label>
+        <input type="number" id="area" placeholder="e.g., 2.5" step="0.01" required>
+
+        <button type="submit">Get Yield Forecast</button>
+      </form>
+
+      <div class="result" id="result-box">
+        <h3>No Predictions Yet</h3>
+        <p>Fill out the form to get your crop yield forecast and recommendations.</p>
+        <div id="predictionResult"></div>
+        <div id="explanationResult" style="margin-top: 15px; font-style: italic; color: #444;"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 AgriYield AI. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#" id="terms-link">Terms of Use</a></li>
+        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="terms-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-terms">&times;</span>
+      <h2>Terms of Use</h2>
+      <p>Last updated: September 14, 2025</p>
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This is a template and not legal advice. You should consult with a legal professional to create terms that are appropriate for your specific situation.
+      </div>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing and using AgriYield AI ("the Service"), you accept and agree to be bound by the terms and provision of this agreement.</p>
+      <h3>2. Service Description</h3>
+      <p>AgriYield AI provides agricultural yield predictions and crop recommendations based on data modeling. These predictions are for informational purposes only and should not be considered as guaranteed outcomes.</p>
+      <h3>3. Disclaimer of Warranties</h3>
+      <p>The Service is provided "as is". We make no warranty that the predictions will be accurate or reliable. Any financial or farming decisions you make based on the information from this Service are at your own risk.</p>
+    </div>
+  </div>
+
+  <div id="privacy-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-privacy">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p>Last updated: September 14, 2025</p>
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This is a template and not legal advice. You should consult with a legal professional to create a policy that is compliant with relevant laws.
+      </div>
+      <h3>1. Information We Collect</h3>
+      <p>We collect the data you provide (District, Crop, Year, Area) to generate predictions. We may use this data anonymously to improve our service.</p>
+      <h3>2. Data Sharing</h3>
+      <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties.</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
